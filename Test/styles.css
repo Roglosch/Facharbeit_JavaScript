@@ -1,28 +1,43 @@
+root {
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
 body{
-    background-color: darkgreen;
+    background-image: url("../Img/Background/parallax-mountain-together_big.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
 }
 
-.loo{
-    color: black;
-    border-width: 2px;
-    border-style: solid;
-}
-
-h1{
-    padding-left: 15px;
-}
-
-.null{
-    margin-left: 33px;
-}
 main {
-    background-color: white;
+    flex-grow: 1;
+    display: flex;
 }
 
 .imgTarget{
     position: absolute;
+    visibility: hidden;
+}
+
+.gameArea{
+    flex-grow: 3;
 }
 
 .gameRules{
-    margin-left: 800px;
+    margin-right: 20px;
+}
+
+footer {
+    margin: 20px;
+}
+
+.credits {
+    color: whitesmoke;
 }

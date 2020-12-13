@@ -6,7 +6,7 @@ const imgSrc = [
     {src: "dwarf.png", name: "Dwarf"},
     {src: "elf.png", name: "Elf"}
 ];
-let activeImage;
+let activeImage = [];
 
 function getRandomValue(range, min) {
     return Math.floor(Math.random() * range) + min;
@@ -14,11 +14,14 @@ function getRandomValue(range, min) {
 
 function checkAndHandleWin(value) {
     if (value >= 10) {
-        window.location.replace("./WinPage.html")
+        document.getElementById("headerInformation").innerText = "Herzlichen Glückwunsch, Sie haben gewonnen!"
+        clearInterval(interval)
+        for (let i = 1; i <= 3; i++) {
+            const targetImage = document.getElementById("imgTarget"+i)
+            targetImage.style.visibility = "hidden"
+        }
         // Es wird die Siegesbedingung geprüft und bei Erfolg die neue Seite aufgerufen
-        return true
     }
-    return false
 }
 
 function setNewButtonPosition(element) {
@@ -35,11 +38,11 @@ function setNewButtonPosition(element) {
     // Die oben bestimmten Werte werden eingesetzt
 }
 
-function handleTargetClick() {
+function handleTargetClick(number) {
     const headerTargetHits = document.getElementById('headerHits');
     const headerLifeCount = document.getElementById("headerLife");
 
-    switch (activeImage) {
+    switch (activeImage[number]) {
         case "Dwarf":
             headerLifeCount.innerText--;
             break;
@@ -59,22 +62,26 @@ function handleTargetClick() {
 
 function startGame(liveCount) {
     //TODO: Set Lives to LifeCount
+    document.getElementById("headerLife").innerText = liveCount;
+    for (let i = 1; i <= 3; i++) {
+        const targetImage = document.getElementById("imgTarget"+i)
+        targetImage.style.visibility = "visible"
+    }
     interval = setInterval(runThroughGameLoopOnce, 1000)
 }
 
 function runThroughGameLoopOnce() {
-    console.log("One loop")
     for (let i = 1; i <= 3; i++) {
         const targetImage = document.getElementById("imgTarget"+i)
         setNewButtonPosition(targetImage);
 
-        changeImage(targetImage)
+        changeImage(targetImage, i)
     }
 }
 
-function changeImage(targetImage) {
+function changeImage(targetImage, number) {
     const imgNumber = Math.floor(Math.random() * imgSrc.length)
-    activeImage = imgSrc[imgNumber].name
+    activeImage[number] = imgSrc[imgNumber].name
     targetImage.src = imgPath + imgSrc[imgNumber].src
 }
 
