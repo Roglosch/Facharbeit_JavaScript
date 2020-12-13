@@ -7,29 +7,37 @@ const imgSrc = [
     {src: "elf.png", name: "Elf"}
 ];
 let activeImage = [];
+let hitsNeededForWinning;
 
 function getRandomValue(range, min) {
     return Math.floor(Math.random() * range) + min;
 }
 
-function checkAndHandleWin(value) {
-    if (value >= 10) {
-        document.getElementById("headerInformation").innerText = "Herzlichen Glückwunsch, Sie haben gewonnen!"
-        clearInterval(interval)
-        for (let i = 1; i <= 3; i++) {
-            const targetImage = document.getElementById("imgTarget"+i)
-            targetImage.style.visibility = "hidden"
-        }
-        // Es wird die Siegesbedingung geprüft und bei Erfolg die neue Seite aufgerufen
+function handleGameEnded(messageText, messageColor) {
+    document.getElementById("messageBox").style.visibility = "visible";
+    document.getElementById("message").innerText = messageText;
+    document.getElementById("message").style.color = messageColor;
+    clearInterval(interval);
+    for (let i = 1; i <= 3; i++) {
+        const targetImage = document.getElementById("imgTarget" + i);
+        targetImage.style.visibility = "hidden"
+    }
+}
+
+function checkAndHandleWinOrLose(hits, remainingLife) {
+    if (hits >= hitsNeededForWinning) {
+        handleGameEnded("Herzlichen Glückwunsch, Sie haben gewonnen!", "whitesmoke")
+    } else if (remainingLife <= 0) {
+        handleGameEnded("Der Hochkönig hat Sie auf Grund ihrer Taten verbannt!", "red")
     }
 }
 
 function setNewButtonPosition(element) {
-    let valueX = getRandomValue(500, 1)
-    let valueY = getRandomValue(500, 1)
+    let valueX = getRandomValue(500, 1);
+    let valueY = getRandomValue(500, 1);
     // Es werden mit Hilfe der Funktion neue Werte für die Position bestimmt
 
-    let valueSize = getRandomValue(40, 5)
+    let valueSize = getRandomValue(40, 5);
     // Es wird mit Hilfe der Funktion ein neuer Wert für die Größe bestimmt
 
     element.style.left = valueX + 'px';
@@ -39,40 +47,41 @@ function setNewButtonPosition(element) {
 }
 
 function handleTargetClick(number) {
-    const headerTargetHits = document.getElementById('headerHits');
-    const headerLifeCount = document.getElementById("headerLife");
+    const displayTargetHits = document.getElementById('displayHits');
+    const displayLifeCount = document.getElementById("displayLife");
 
     switch (activeImage[number]) {
         case "Dwarf":
-            headerLifeCount.innerText--;
+            displayLifeCount.innerText--;
             break;
         case "Orc":
-            headerTargetHits.innerText++;
+            displayTargetHits.innerText++;
             break;
         case "Elf":
-            headerTargetHits.innerText = (Number(headerTargetHits.innerText)+2).toString();
+            displayTargetHits.innerText = (Number(displayTargetHits.innerText) + 2).toString();
             break;
         default:
-            headerTargetHits.innerText++;
+            displayTargetHits.innerText++;
     }
-    //TODO: Live = 0
-    checkAndHandleWin(headerTargetHits.innerText);
-    // Die Funktion zu Überprüfung zum Gewinnen wird aufgerufen
+    checkAndHandleWinOrLose(displayTargetHits.innerText, displayLifeCount.innerText);
+    // Die Funktion zur Überprüfung der Gewinnenvoraussetzung und der Todesvoraussetzung wird aufgerufen
 }
 
-function startGame(liveCount) {
-    //TODO: Set Lives to LifeCount
-    document.getElementById("headerLife").innerText = liveCount;
+function startGame(liveCount, winHits) {
+    document.getElementById("displayLife").innerText = liveCount;
+    document.getElementById("displayHits").innerText = "0";
+    document.getElementById("messageBox").style.visibility = "hidden";
+    hitsNeededForWinning = winHits;
     for (let i = 1; i <= 3; i++) {
-        const targetImage = document.getElementById("imgTarget"+i)
+        const targetImage = document.getElementById("imgTarget" + i);
         targetImage.style.visibility = "visible"
     }
-    interval = setInterval(runThroughGameLoopOnce, 1000)
+    interval = setInterval(runThroughGameLoopOnce, 750)
 }
 
 function runThroughGameLoopOnce() {
     for (let i = 1; i <= 3; i++) {
-        const targetImage = document.getElementById("imgTarget"+i)
+        const targetImage = document.getElementById("imgTarget" + i);
         setNewButtonPosition(targetImage);
 
         changeImage(targetImage, i)
@@ -80,9 +89,9 @@ function runThroughGameLoopOnce() {
 }
 
 function changeImage(targetImage, number) {
-    const imgNumber = Math.floor(Math.random() * imgSrc.length)
-    activeImage[number] = imgSrc[imgNumber].name
-    targetImage.src = imgPath + imgSrc[imgNumber].src
+    const imgNumber = Math.floor(Math.random() * imgSrc.length);
+    activeImage[number] = imgSrc[imgNumber].name;
+    targetImage.src = imgPath + imgSrc[imgNumber].src;
 }
 
 function endGame() {

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e260614-4277-45fb-bea7-cfc2410bc6fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/WinPage.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/default.js" beforeDir="false" afterPath="$PROJECT_DIR$/Test/default.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/html.html" beforeDir="false" afterPath="$PROJECT_DIR$/Test/html.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Test/styles.css" afterDir="false" />
@@ -65,7 +64,7 @@
       <updated>1607777178452</updated>
       <workItem from="1607777179667" duration="10551000" />
       <workItem from="1607857928341" duration="6242000" />
-      <workItem from="1607868008155" duration="13101000" />
+      <workItem from="1607868008155" duration="15460000" />
     </task>
     <servers />
   </component>
@@ -145,6 +144,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="536" y="329" key="com.intellij.ide.util.TipDialog/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607868008663" />
+    <state x="471" y="202" width="737" height="606" key="find.popup" timestamp="1607881403711">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="471" y="202" width="737" height="606" key="find.popup/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607881403711" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1607873215127">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

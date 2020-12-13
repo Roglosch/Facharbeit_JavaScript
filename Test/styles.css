@@ -1,3 +1,7 @@
+* {
+    cursor: url("../Img/Cursor/Axe.png"), auto !important;
+}
+
 root {
     height: 100%;
 }
@@ -5,7 +9,8 @@ root {
 html {
     height: 100%;
 }
-body{
+
+body {
     background-image: url("../Img/Background/parallax-mountain-together_big.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,16 +26,16 @@ main {
     display: flex;
 }
 
-.imgTarget{
+.imgTarget {
     position: absolute;
     visibility: hidden;
 }
 
-.gameArea{
+.gameArea {
     flex-grow: 3;
 }
 
-.gameRules{
+.gameRules {
     margin-right: 20px;
 }
 
@@ -40,4 +45,16 @@ footer {
 
 .credits {
     color: whitesmoke;
+}
+
+.messageBox {
+    background-color: black;
+    position: fixed;
+    visibility: hidden;
+    height: 50px;
+    width: 100%;
+    top: calc(50% - 25px);
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
