@@ -28,7 +28,7 @@ function checkAndHandleWinOrLose(hits, remainingLife) {
     if (hits >= hitsNeededForWinning) {
         handleGameEnded("Herzlichen Glückwunsch, Sie haben gewonnen!", "whitesmoke")
     } else if (remainingLife <= 0) {
-        handleGameEnded("Der Hochkönig hat Sie auf Grund ihrer Taten verbannt!", "red")
+        handleGameEnded("Der Hochkönig hat Sie aufgrund Ihrer Taten verbannt!", "red")
     }
 }
 
@@ -37,7 +37,7 @@ function setNewButtonPosition(element) {
     let valueY = getRandomValue(500, 1);
     // Es werden mit Hilfe der Funktion neue Werte für die Position bestimmt
 
-    let valueSize = getRandomValue(40, 5);
+    let valueSize = getRandomValue(20, 5);
     // Es wird mit Hilfe der Funktion ein neuer Wert für die Größe bestimmt
 
     element.style.left = valueX + 'px';
