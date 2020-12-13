@@ -11,6 +11,7 @@ const imgSrc = [
 let activeImage = [];
 let interval;
 let hitsNeededForWinning;
+let playing = false;
 
 //------------------------------------------------------------------------
 // General Auxiliary Functions
@@ -25,28 +26,35 @@ function getRandomValue(range, min) {
 //------------------------------------------------------------------------
 // Starts the game
 function startGame(liveCount, winHits) {
-    // Sets the visible values to the start values
-    document.getElementById("displayLife").innerText = liveCount;
-    document.getElementById("displayHits").innerText = "0";
-    document.getElementById("messageBox").style.visibility = "hidden";
-    hitsNeededForWinning = winHits;
-    // Makes images visible
-    for (let i = 1; i <= 3; i++) {
-        const targetImage = document.getElementById("imgTarget" + i);
-        targetImage.style.visibility = "visible"
+    if (!playing) {
+        playing = true;
+        // Sets the visible values to the start values
+        document.getElementById("displayLife").innerText = liveCount;
+        document.getElementById("displayHits").innerText = "0";
+        document.getElementById("messageBox").style.visibility = "hidden";
+        hitsNeededForWinning = winHits;
+        // Makes images visible
+        for (let i = 1; i <= 3; i++) {
+            const targetImage = document.getElementById("imgTarget" + i);
+            targetImage.style.visibility = "visible"
+        }
+        // Starts game loop
+        interval = setInterval(runThroughGameLoopOnce, 750)
     }
-    // Starts game loop
-    interval = setInterval(runThroughGameLoopOnce, 750)
 }
 
+// Stops the game
 function endGame() {
-    clearInterval(interval)
+    clearGameArea();
+    playing = false;
 }
 
+// Reacts to the target click
 function handleTargetClick(number) {
+    // Gets the values
     const displayTargetHits = document.getElementById('displayHits');
     const displayLifeCount = document.getElementById("displayLife");
-
+    // Influences the values depending on the hit
     switch (activeImage[number]) {
         case "Dwarf":
             displayLifeCount.innerText--;
@@ -60,35 +68,38 @@ function handleTargetClick(number) {
         default:
             displayTargetHits.innerText++;
     }
+    //Function to check the win condition and the death condition is called up
     checkAndHandleWinOrLose(displayTargetHits.innerText, displayLifeCount.innerText);
-    // Die Funktion zur Überprüfung der Gewinnenvoraussetzung und der Todesvoraussetzung wird aufgerufen
 }
+
 //------------------------------------------------------------------------
 // Game Loop
 //------------------------------------------------------------------------
 function runThroughGameLoopOnce() {
-    // Is responsible for the value of three images
+    // Is responsible for the values of the three images
     for (let i = 1; i <= 3; i++) {
         const targetImage = document.getElementById("imgTarget" + i);
-        setNewButtonPosition(targetImage);
+        setNewButtonProperties(targetImage);
         changeImage(targetImage, i)
     }
 }
 
-function setNewButtonPosition(element) {
+// Sets new button properties
+function setNewButtonProperties(element) {
+    // New values for the position are determined with the help of the function
     let valueX = getRandomValue(500, 1);
     let valueY = getRandomValue(500, 1);
-    // Es werden mit Hilfe der Funktion neue Werte für die Position bestimmt
 
+    // A new value for the size is determined with the help of the function
     let valueSize = getRandomValue(20, 5);
-    // Es wird mit Hilfe der Funktion ein neuer Wert für die Größe bestimmt
 
+    // The values determined above are used
     element.style.left = valueX + 'px';
     element.style.top = valueY + 'px';
-    element.style.height = valueSize + '%';
-    // Die oben bestimmten Werte werden eingesetzt
+    element.style.height = valueSize + '%'
 }
 
+// Changes the Image
 function changeImage(targetImage, number) {
     const imgNumber = Math.floor(Math.random() * imgSrc.length);
     activeImage[number] = imgSrc[imgNumber].name;
@@ -98,6 +109,7 @@ function changeImage(targetImage, number) {
 //------------------------------------------------------------------------
 // Win / Lose Checks
 //------------------------------------------------------------------------
+// Decides on win or lose situation
 function checkAndHandleWinOrLose(hits, remainingLife) {
     if (hits >= hitsNeededForWinning) {
         handleGameEnded("Herzlichen Glückwunsch, Sie haben gewonnen!", "whitesmoke")
@@ -106,10 +118,16 @@ function checkAndHandleWinOrLose(hits, remainingLife) {
     }
 }
 
+// Performs win or lose situation
 function handleGameEnded(messageText, messageColor) {
     document.getElementById("messageBox").style.visibility = "visible";
     document.getElementById("message").innerText = messageText;
     document.getElementById("message").style.color = messageColor;
+    clearGameArea()
+}
+
+// hides objects on the game area
+function clearGameArea(){
     clearInterval(interval);
     for (let i = 1; i <= 3; i++) {
         const targetImage = document.getElementById("imgTarget" + i);
