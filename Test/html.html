@@ -13,11 +13,16 @@
     <h3 id="headerLife">25</h3>
     <h3>Treffer: </h3>
     <h3 id="headerHits">0</h3>
-<!--    <button class="startButton" onclick="handleStartGame()">Start</button>-->
+    <button class="startButton" onclick="startGame(10)">Start</button>
+    <button class="startButton" onclick="endGame()">Stop</button>
 </div>
 <main>
-    <img src="../Img/index.jpg" , alt="Image" ,
-         id="imgTarget" , onclick="handleTargetClick()" , class="imgTarget"/>
+    <img src="../Img/orc.jpg" , alt="Target Image" ,
+         id="imgTarget1" , onclick="handleTargetClick()" , class="imgTarget"/>
+    <img src="../Img/orc.jpg" , alt="Target Image" ,
+         id="imgTarget2" , onclick="handleTargetClick()" , class="imgTarget"/>
+    <img src="../Img/orc.jpg" , alt="Target Image" ,
+         id="imgTarget3" , onclick="handleTargetClick()" , class="imgTarget"/>
 </main>
 <footer>
     <script src="default.js" , type="text/javascript">
