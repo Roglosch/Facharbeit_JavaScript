@@ -1,0 +1,28 @@
+body{
+    background-color: darkgreen;
+}
+
+.loo{
+    color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+h1{
+    padding-left: 15px;
+}
+
+.null{
+    margin-left: 33px;
+}
+main {
+    background-color: white;
+}
+
+.imgTarget{
+    position: absolute;
+}
+
+.gameRules{
+    margin-left: 800px;
+}
