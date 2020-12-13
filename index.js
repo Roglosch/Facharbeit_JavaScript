@@ -30,7 +30,12 @@ function startGame(liveCount, winHits) {
     document.getElementById("displayHits").innerText = "0";
     document.getElementById("messageBox").style.visibility = "hidden";
     hitsNeededForWinning = winHits;
-
+    // Makes images visible
+    for (let i = 1; i <= 3; i++) {
+        const targetImage = document.getElementById("imgTarget" + i);
+        targetImage.style.visibility = "visible"
+    }
+    // Starts game loop
     interval = setInterval(runThroughGameLoopOnce, 750)
 }
 
