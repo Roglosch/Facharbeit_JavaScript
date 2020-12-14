@@ -46,7 +46,6 @@ function startGame(liveCount, winHits) {
 // Stops the game
 function endGame() {
     clearGameArea();
-    playing = false;
 }
 
 // Reacts to the target click
@@ -131,6 +130,7 @@ function clearGameArea(){
     clearInterval(interval);
     for (let i = 1; i <= 3; i++) {
         const targetImage = document.getElementById("imgTarget" + i);
-        targetImage.style.visibility = "hidden"
+        targetImage.style.visibility = "hidden";
     }
+    playing = false;
 }

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7e260614-4277-45fb-bea7-cfc2410bc6fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,8 @@
       <workItem from="1607777179667" duration="10551000" />
       <workItem from="1607857928341" duration="6242000" />
       <workItem from="1607868008155" duration="15880000" />
-      <workItem from="1607887175821" duration="6929000" />
+      <workItem from="1607887175821" duration="7506000" />
+      <workItem from="1607931940774" duration="268000" />
     </task>
     <servers />
   </component>
@@ -145,10 +145,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1637" height="116" key="GridCell.Tab.3.right/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607883919542" />
-    <state x="536" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1607887176944">
+    <state x="536" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1607931944151">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="536" y="329" key="com.intellij.ide.util.TipDialog/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607887176944" />
+    <state x="536" y="329" key="com.intellij.ide.util.TipDialog/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607931944151" />
     <state x="471" y="202" width="737" height="606" key="find.popup" timestamp="1607881403711">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
