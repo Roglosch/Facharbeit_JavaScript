@@ -2,7 +2,7 @@
 "use strict";
 
 // Variables are declared that can be used in all of the following functions
-const imgPath = "./Img/";
+const imgPath = "./Assets/Image/";
 const imgSrc = [
     {src: "orc.jpg", name: "Orc"},
     {src: "dwarf.png", name: "Dwarf"},

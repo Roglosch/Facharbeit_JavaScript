@@ -1,5 +1,5 @@
 * {
-    cursor: url("Img/Cursor/Axe.png"), auto !important;
+    cursor: url("Assets/Cursor/Axe.png"), auto !important;
 }
 
 root {
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-image: url("Img/Background/parallax-mountain-together_big.png");
+    background-image: url("Assets/Background/parallax-mountain-together_big.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
