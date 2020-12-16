@@ -100,7 +100,7 @@ function setNewButtonProperties(element) {
 
 // Changes the Image
 function changeImage(targetImage, number) {
-    const imgNumber = Math.floor(Math.random() * imgSrc.length);
+    const imgNumber = getRandomValue(imgSrc.length,0);
     activeImage[number] = imgSrc[imgNumber].name;
     targetImage.src = imgPath + imgSrc[imgNumber].src;
 }

@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e260614-4277-45fb-bea7-cfc2410bc6fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Background/parallax-mountain-together.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Background/parallax-mountain-together.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Background/parallax-mountain-together_big.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Background/parallax-mountain-together_big.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Cursor/Axe.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cursor/Axe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/Cursor/delete.ani" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Cursor/delete.ani" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/dwarf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/elf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Img/orc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +72,7 @@
       <workItem from="1607931940774" duration="1019000" />
       <workItem from="1607955695443" duration="350000" />
       <workItem from="1607976967965" duration="2382000" />
+      <workItem from="1608139655449" duration="1932000" />
     </task>
     <servers />
   </component>
@@ -156,10 +148,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1637" height="116" key="GridCell.Tab.3.right/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607883919542" />
-    <state x="-1144" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1607976969863">
+    <state x="-1144" y="329" key="com.intellij.ide.util.TipDialog" timestamp="1608139665408">
       <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
-    <state x="-1144" y="329" key="com.intellij.ide.util.TipDialog/-1680.0.1680.1010/0.0.1680.1010@-1680.0.1680.1010" timestamp="1607976969863" />
+    <state x="-1144" y="329" key="com.intellij.ide.util.TipDialog/-1680.0.1680.1010/0.0.1680.1010@-1680.0.1680.1010" timestamp="1608139665408" />
     <state x="536" y="329" key="com.intellij.ide.util.TipDialog/-1680.0.1680.1010/0.0.1680.1010@0.0.1680.1010" timestamp="1607931944151" />
     <state x="471" y="202" width="737" height="606" key="find.popup" timestamp="1607881403711">
       <screen x="0" y="0" width="1680" height="1010" />
