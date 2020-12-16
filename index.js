@@ -78,13 +78,13 @@ function runThroughGameLoopOnce() {
     // Is responsible for the values of the three images
     for (let i = 1; i <= 3; i++) {
         const targetImage = document.getElementById("imgTarget" + i);
-        setNewButtonProperties(targetImage);
+        setNewTargetProperties(targetImage);
         changeImage(targetImage, i)
     }
 }
 
 // Sets new button properties
-function setNewButtonProperties(element) {
+function setNewTargetProperties(element) {
     // New values for the position are determined with the help of the function
     let valueX = getRandomValue(500, 1);
     let valueY = getRandomValue(500, 1);
